@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include header.html %>
+   </head>
+   <body>
+      <div class='container'>
+         <div class='form-box'>
+         <h2 class='text-center animated bounce'>Crete Project Form</h2>
+      
+      <form method="post" action="/newproject" class='animated bounceInDown'>
+         <!--Error part -->
+            <% if(typeof(errorMessage) !== 'undefined') {%>
+            <div class='alert alert-info'>
+               <strong>Alert!&nbsp</strong><%= errorMessage %>
+            </div>
+            <%}%>
+            <input type="hidden" name="userid" value="<%= userid %>">
+           <div class="form-group">
+             <label for="name">Name:</label>
+             <input type="text" name='name' placeholder='Name' required class="form-control" id="name">
+           </div>
+
+            <div class="form-group">
+             <label for="description">Description:</label>
+             <input type="text" name='description' placeholder='Description' required class="form-control" id="description">
+           </div>
+
+
+           <div class="form-group">
+             <label for="start_date">Start Date:</label>
+             <input type="date" name='start_date' placeholder='start_date' required class="form-control" id="start_date">
+           </div>
+
+           <div class="form-group">
+             <label for="end_date">End Date:</label>
+             <input type="date" name='end_date' placeholder='end_date' required class="form-control" id="end_date">
+           </div>
+
+           <input type="submit" name="signup" id="signup" class='btn btn-success' value="Create"/>
+      </form>
+      </div>
+   </div>
+   </body>
+</html>

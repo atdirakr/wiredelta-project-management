@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include header.html %>
+   </head>
+   <body>
+      <div class='container'>
+         <div class='form-box'>
+         <h2 class='text-center animated bounce'>Sign up Form</h2>
+      
+      <form method="post" action="/signup" class='animated bounceInDown'>
+         <!--Error part -->
+            <% if(typeof(errorMessage) !== 'undefined') {%>
+            <div class='alert alert-info'>
+               <strong>Alert!&nbsp</strong><%= errorMessage %>
+            </div>
+            <%}%>
+
+           <div class="form-group">
+             <label for="name">Username:</label>
+             <input type="text" name='username' placeholder='username' required class="form-control" id="username">
+           </div>
+
+            <div class="form-group">
+             <label for="email">Email:</label>
+             <input type="email" name='useremail' placeholder='useremail' required class="form-control" id="useremail">
+           </div>
+
+
+           <div class="form-group">
+             <label for="password">Password:</label>
+             <input type="password" placeholder="password" required class="form-control" name='password' id="password">
+           </div>
+           <input type="submit" name="signup" id="signup" class='btn btn-success' value="Signup"/>
+            <a href="/signin" class='btn btn-success' title="sign in">Sign in</a>
+      </form>
+      </div>
+   </div>
+   </body>
+</html>

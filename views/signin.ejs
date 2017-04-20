@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+     <% include header.html %>
+   </head>
+   <body>
+      <div class='container'>
+
+       <div class='form-box'>
+       <h2 class='text-center animated bounce'>Sign In Form</h2>
+       <form role="form" method="post" action="/signin" class='animated bounceInDown'>
+            
+           <!--Error part -->
+            <% if(typeof(errorMessage) !== 'undefined') {%>
+            <div class='alert alert-info'>
+               <strong>Alert!&nbsp</strong><%= errorMessage %>
+            </div>
+            <%}%>
+           
+          <div class="form-group">
+             <label for="name">Username:</label>
+             <input type="text" name='username' placeholder='username' class="form-control" id="username">
+           </div>
+
+           <div class="form-group">
+             <label for="password">Password:</label>
+             <input type="password" placeholder="password" class="form-control" name='password' id="password">
+           </div>
+           <button type="submit" class="btn btn-success">Login</button>
+           <a href="/signup" class='btn btn-success' title="register">Signup</a>
+         </form>
+         </div>
+
+
+      </div>
+
+
+      <!--<form method="post" action="/signin">
+		 
+         <% if(typeof(errorMessage) !== 'undefined') {%>
+            <span><%= errorMessage %></span>
+         <% } %>
+         <p>
+            <label for="username">username</label>
+            <input type="text" name="username" id="username"
+               placeholder="username" required="true"/>
+         </p>
+         <p>
+            <label for="password">password</label>
+            <input type="text" name="password" id="password"
+               placeholder="password" required="true"/>
+         </p>
+         <p>
+            <input type="submit" name="signin" id="signin" value="sign in"/> 
+            <a href="/signup" title="register">register</a>
+         </p>
+			
+      </form>_-->
+   </body>
+</html>

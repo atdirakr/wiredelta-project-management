@@ -1,0 +1,12 @@
+Create database:
+Database name: dbUsers
+
+After import tblusers.sql file into this dbUsers.
+
+Note:Make sure phpmyadmin is running.
+
+Admin info:
+username:admin 
+password:admin
+
+If the user has isAdmin column 1. He is acting as admin.

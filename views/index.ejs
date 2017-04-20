@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <% include header.html %>
+   </head>
+   <body>
+      <div class='container'>
+         <h2 class='text-center animated bounce'>Welcome &nbsp<strong><%= data.user.username %></strong></h2>
+         
+         <div class='form-box'>
+         <h3>Your Projects <a href="/signout" class='btn btn-info pull-right' title="sign out">Sign out</a> &nbsp;<a href="/newproject/<%=data.user.userId%>" class='btn btn-success pull-right' title="Add Project">Create Project</a></h3>
+         <table class='table'>
+               <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Action</th>
+               </tr>
+               <% data.project.forEach(function(msgObj){ %>
+                  <%if (msgObj.userid == data.user.userId) { %>
+                    <tr>
+                       <td><%= msgObj.name %></td>
+                       <td><%= msgObj.description %></td>
+                       <td><%= data.moment(msgObj.start_date).format('Do MMMM, YYYY'); %></td>
+                        <td><%= data.moment(msgObj.end_date).format('Do MMMM, YYYY'); %></td>
+                       <td><a href="/editproject/<%=msgObj.id%>" class='btn btn-info'>Edit</a>&nbsp; | &nbsp;<a href="/deleteproject/<%=msgObj.id%>" class='btn btn-danger'>Delete</a></td>
+                    </tr>
+                    <% } %>
+              <% }) %>
+         </table>
+         </div>
+
+      </div>
+  </body>
+</html>
