@@ -1,7 +1,7 @@
 Create database:
-Database name: dbUsers
+Database name: dbProject
 
-After import tblusers.sql file into this dbUsers.
+After import dbProject.sql file into this dbUsers.
 
 Note:Make sure phpmyadmin is running.
 
