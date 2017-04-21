@@ -1,9 +1,8 @@
 Create database:
 Database name: dbProject
 
-After import dbProject.sql file into this dbUsers.
+After import dbProject.sql file into this dbProject.
 
-Note:Make sure phpmyadmin is running.
 
 Admin info:
 username:admin 
